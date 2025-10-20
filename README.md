@@ -36,4 +36,4 @@ GreenLoop is a social media platform designed for eco-conscious users. Share you
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/greenloop.git
+   git clone https://github.com/Reserted/greenloop.git
