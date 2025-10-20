@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "ryohei",
+      "password": "password123",
+      "name": "Ryohei Sasagawa",
+      "bio": "Frontend developer",
+      "posts": [
+        {
+          "id": 1,
+          "content": "Building a static social media app!",
+          "timestamp": "2025-10-20T10:00:00"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "alice",
+      "password": "alice123",
+      "name": "Alice Smith",
+      "bio": "Designer and artist",
+      "posts": []
+    }
+  ]
+}

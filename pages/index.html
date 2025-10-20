@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed - Social Media App</title>
+    <style>
+      :root {
+        --primary-color: #2a9d8f; /* teal green */
+        --secondary-color: #7cb342; /* leafy green */
+        --background-color: #f8f9fa;
+        --text-color: #212529;
+        --light-gray: #e9ecef;
+        --white: #ffffff;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: var(--shadow);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      #user-greeting {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      #logout-btn,
+      a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        transition: opacity 0.3s;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      #logout-btn:hover,
+      a:hover {
+        opacity: 0.8;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .post-form {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+      }
+
+      #new-post-content {
+        width: 90%;
+        padding: 1rem;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        resize: vertical;
+        min-height: 100px;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+
+      .file-label {
+        display: block;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      #file-name {
+        margin-left: 0.5rem;
+        color: #6c757d;
+        font-weight: normal;
+      }
+
+      #add-post-btn {
+        background-color: var(--primary-color);
+        color: var(--white);
+        border: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: var(--border-radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #add-post-btn:hover {
+        background-color: var(--secondary-color);
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .images-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .loader {
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      @media (max-width: 600px) {
+        .images-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Social Media Feed</h1>
+      <div id="user-greeting">Welcome, User!</div>
+      <div>
+        <button id="logout-btn">Logout</button>
+        <a href="profile.html">My Profile</a>
+      </div>
+    </header>
+    <div class="post-form">
+      <textarea
+        id="new-post-content"
+        placeholder="What's on your mind?"
+        required
+      ></textarea>
+      <label for="post-image" class="file-label">
+        Choose Image
+        <span id="file-name">No file chosen</span>
+      </label>
+      <input
+        type="file"
+        id="post-image"
+        accept="image/*"
+        style="display: none"
+      />
+      <button id="add-post-btn">Post</button>
+    </div>
+    <main>
+      <div id="images-container" class="images-container">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+      <div id="loader" class="loader">Loading posts...</div>
+    </main>
+    <script src="../src/js/feed.js"></script>
+    <script src="../src/js/scripts.js"></script>
+  </body>
+</html>

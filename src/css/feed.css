@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", -serif;
+}
+
+a {
+  color: dodgerblue;
+}
+
+a:visited {
+  color: dodgerblue;
+}
+
+main {
+  min-height: 110vh;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+}
+
+main h1 {
+  margin: 15px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #333;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: none;
+  animation: spin 1s linear infinite;
+}
+
+.loader.show {
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+main p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+main .images-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1.5fr);
+  grid-column-gap: 1.5rem;
+}
+main .images-container .image-wrapper {
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+main .images-container .image-wrapper img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+main .images-container .image-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+main .images-container .image-wrapper:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+main .images-container .image-wrapper.loading {
+  position: relative;
+}
+
+main .images-container .image-wrapper.loading::after {
+  content: "";
+  position: absolute;
+  background: #fefefe;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  height: 100%;
+  width: 98%;
+}
+
+main .loader {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s ease-in;
+  border: 2px solid dodgerblue;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  margin-top: 10px;
+  animation: loader 0.5s infinite alternate;
+}
+
+main .loader.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes loader {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}
+
+@media (max-width: 700px) {
+  main .images-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post,
+.profile-info {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+.post-form {
+  margin: 1rem 0;
+}
+
+.post-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-container input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-form {
+  margin-bottom: 10rem;
+  display: relative;
+  gap: 100px;
+  width: 300px;
+}
+
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.file-label {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.file-label:hover {
+  background-color: #0056b3;
+}
+
+#file-name {
+  margin-left: 10px;
+  font-weight: normal;
+  color: #555;
+}

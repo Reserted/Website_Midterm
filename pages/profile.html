@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Social Media App</title>
+    <style>
+      /* Modern CSS */
+      :root {
+        --primary-color: #2a9d8f; /* teal green */
+        --secondary-color: #7cb342; /* leafy green */
+        --background-color: #f8f9fa;
+        --text-color: #212529;
+        --light-gray: #e9ecef;
+        --white: #ffffff;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      header a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 0.5rem;
+        transition: opacity 0.3s;
+      }
+
+      header a:hover {
+        opacity: 0.8;
+      }
+
+      .profile-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+      }
+
+      .profile-info {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .profile-info h2 {
+        margin: 0;
+        font-size: 2rem;
+        color: var(--primary-color);
+      }
+
+      .profile-info p {
+        color: #6c757d;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      .profile-posts {
+        margin-top: 2rem;
+      }
+
+      .profile-posts h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--light-gray);
+        padding-bottom: 0.5rem;
+      }
+
+      #user-posts {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .post {
+        background-color: var(--light-gray);
+        padding: 1.2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+      }
+
+      .post p {
+        margin: 0;
+      }
+
+      @media (max-width: 600px) {
+        .profile-container {
+          margin: 1rem;
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Profile</h1>
+      <a href="index.html">Back to Feed</a>
+    </header>
+    <div class="profile-container">
+      <div class="profile-info">
+        <h2 id="profile-name">John Doe</h2>
+        <p id="profile-bio">
+          Passionate about technology, design, and travel. Sharing my journey
+          one post at a time.
+        </p>
+      </div>
+      <div class="profile-posts">
+        <h3>My Posts</h3>
+        <div id="user-posts">
+          <!-- Example Post -->
+          <div class="post">
+            <p>
+              Just launched my new project! Excited to share it with the world.
+              #Tech #Innovation
+            </p>
+          </div>
+          <!-- More posts will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/profile.js"></script>
+  </body>
+</html>
